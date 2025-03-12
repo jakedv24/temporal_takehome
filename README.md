@@ -4,9 +4,9 @@ Time-boxed ~2 hrs.
 
 ## Implementation Details
 
-I decided to right a React application with next.js and Typescript. This is my first time using next.js, I wanted to try and learn something new and give myself a little challenge. I'm quite sure there is plenty of improvement around routing and project structure / server-side rendering improvements to be made here as a result of that.
+I decided to write a React application with next.js and Typescript. This is my first time using next.js, I wanted to try and learn something new and give myself a little challenge. I'm quite sure there is plenty of improvement around routing and project structure / server-side rendering improvements to be made here as a result of that.
 
-I have succesfully implemented:
+I have successfully implemented:
 
 1. Search input with debouncing
 2. Unrequested / error / empty / success / retry (with a button) states in the pokemon list
@@ -24,5 +24,5 @@ npm install
 Run Next.js server:
 
 ```
-npm dev
+npm run dev
 ```

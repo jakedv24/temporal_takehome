@@ -4,6 +4,7 @@ import React, { FC, useCallback, useEffect } from "react";
 import { Pokemon, PokemonStatus } from "../stores/pokemon_slice";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchPokemonDataForSearch } from "../api/pokemon_thunks";
+import Link from "next/link";
 
 const PokemonList: FC = ({}) => {
   const dispatch = useAppDispatch();
@@ -37,7 +38,22 @@ const PokemonList: FC = ({}) => {
     }
 
     return pokemon.map((p) => {
-      return <div key={p.id}>{p.name}</div>;
+      return (
+        <div key={p.id}>
+          <Link
+            href={{
+              pathname: `/pokemon/${p.name}`,
+              query: {
+                name: p.name,
+                id: p.id,
+                classification: p.classification,
+              },
+            }}
+          >
+            <p>{p.name}</p>
+          </Link>
+        </div>
+      );
     });
   };
 

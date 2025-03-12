@@ -20,14 +20,17 @@ export async function queryPokemonForSearch(
       undefined
     );
 
-    const pokemon_acc = pokemon;
+    console.log({ pokemon, nextPage });
+
+    let pokemon_acc = pokemon;
     let nextPageParam = nextPage;
     while (nextPageParam) {
       const { pokemon, nextPage } = await queryPagedPokemon(
         search_term,
         nextPageParam
       );
-      pokemon_acc.concat(pokemon);
+
+      pokemon_acc = pokemon_acc.concat(pokemon);
       nextPageParam = nextPage;
     }
 

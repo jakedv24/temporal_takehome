@@ -8,16 +8,7 @@ import { AppThunk } from "../stores/store";
 import { queryPokemonForSearch } from "./pokemon_service";
 
 export function fetchPokemonDataForSearch(search_term: string): AppThunk {
-  return async (dispatch, getState) => {
-    const state = getState();
-    if (
-      state.pokemon.status == PokemonStatus.COMPLETE &&
-      state.pokemon.search_term == search_term
-    ) {
-      // no-op
-      return;
-    }
-
+  return async (dispatch) => {
     dispatch(setPokemonStatus(PokemonStatus.LOADING));
 
     let pokemon: Pokemon[];

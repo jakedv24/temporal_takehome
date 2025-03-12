@@ -35,8 +35,12 @@ const pokemonSlice = createSlice({
     setPokemon(state, action: PayloadAction<Pokemon[]>) {
       state.pokemon_data = action.payload;
     },
+    setPokemonSearchTerm(state, action: PayloadAction<string>) {
+      state.search_term = action.payload;
+    },
   },
 });
 
-export const { setPokemonStatus, setPokemon } = pokemonSlice.actions;
+export const { setPokemonStatus, setPokemon, setPokemonSearchTerm } =
+  pokemonSlice.actions;
 export default pokemonSlice.reducer;

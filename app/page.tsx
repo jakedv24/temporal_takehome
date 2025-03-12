@@ -1,21 +1,14 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
-import Input from "./components/Input";
 import { Provider } from "react-redux";
 import { store } from "./stores/store";
+import PokemonSearch from "./components/PokemonSearch";
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
-
   return (
     <div>
       <Provider store={store}>
-        <Input value={inputValue} onChange={handleTextChange} />
+        <PokemonSearch />
       </Provider>
     </div>
   );
